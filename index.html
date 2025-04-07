@@ -2,56 +2,114 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Visualization Showcase</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style1.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Factors Determine the Popularity of Songs on Spotify (2022)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style1.css">
+  <!-- Additional inline styles for visualization sections -->
+  <style>
+    .chart-section {
+      margin: 2em 0;
+    }
+    .chart-section h2 {
+      color: #1DB954;
+      text-align: center;
+    }
+    .chart-img {
+      display: block;
+      margin: 0 auto;
+      border: none;
+      cursor: pointer;
+    }
+    .chart-caption {
+      text-align: center;
+      color: #ccc;
+      font-style: italic;
+      margin-top: 0.5em;
+    }
+    /* Abstract Section Styling */
+    .abstract {
+      background: #242424;
+      border: 1px solid #1DB954;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 2em;
+      color: #ccc;
+    }
+    .abstract p {
+      margin: 0;
+    }
+  </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>What Factors Determine the Popularity of Songs on Spotify (2022)</h1>
-        <p>DS 4200, Group 17: Fiona Chen, Fin Li, Owen Hong</p>
-    </header>
-
-    <div class="container">
-        <section>
-            <h2>Topic Motivation</h2>
-            <p>Understanding what makes a song popular is useful information for artists, producers, and others in the
-                music industry, with widely-used music streaming platforms being a reliable source of data on how
-                listeners engage with songs. Using Spotify data from 2022, this project explores how song
-                characteristics—such as duration, key, energy, and genre—correlate with a song's popularity on Spotify.
-                By analyzing these factors, we aim to uncover trends that influence a song's popularity, offering
-                insights into listener preferences and music consumption.</p>
-        </section>
-
-        <section>
-            <h2>Visualizations</h2>
-            <div class="visualization">
-                <div>
-                    <img src="https://via.placeholder.com/600x400" alt="Visualization 1">
-                    <h3>Chart 1: Sales Growth</h3>
-                    <p>This chart shows the sales growth of our product over the last year, showcasing seasonal
-                        patterns.</p>
-                </div>
-                <div>
-                    <img src="https://via.placeholder.com/600x400" alt="Visualization 2">
-                    <h3>Chart 2: Revenue Distribution</h3>
-                    <p>This visualization represents the breakdown of revenue by region, highlighting key areas of
-                        growth.</p>
-                </div>
-            </div>
-        </section>
-
+  <!-- Top Navigation Bar -->
+  <nav class="top-nav">
+    <div class="nav-left">
+      <a href="#top" class="logo">What Factors Determine the Popularity of Songs on Spotify (2022)</a>
     </div>
+    <div class="nav-right">
+      <a href="#home">Home</a>
+    </div>
+  </nav>
 
-    <footer>
-        <p>Created by Your Name</p>
-        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-    </footer>
+  <div class="container">
+    <!-- Abstract Section -->
+    <section id="abstract" class="abstract">
+      <p>
+        Understanding what makes a song popular is useful information for artists, producers, and others in the music industry, with widely-used music streaming platforms being a reliable source of data on how listeners engage with songs. Using Spotify data from 2022, this project explores how song characteristics—such as duration, key, energy, and genre—correlate with a song's popularity on Spotify. By analyzing these factors, we aim to uncover trends that influence a song's popularity, offering insights into listener preferences and music consumption.
+      </p>
+    </section>
+
+    <!-- Section: Popularity Score Distribution by Genre -->
+    <section id="popularity" class="chart-section">
+      <h2>Popularity Score Distribution by Genre</h2>
+      <!-- PNG thumbnail wrapped in an anchor; clicking it loads the interactive page -->
+      <a href="popularity_distribution.html">
+        <img class="chart-img" src="popularity_distribution.png" alt="Popularity Score Distribution Thumbnail" width="750" height="450">
+      </a>
+      <p class="chart-caption">Click the image to view the interactive visualization</p>
+    </section>
+
+    <!-- Section: Interactive Feature Plot by Genre -->
+    <section id="feature" class="chart-section">
+      <h2>Interactive Feature Plot by Genre</h2>
+      <a href="interactive_feature_scatter.html">
+        <img class="chart-img" src="interactive_feature_scatter.png" alt="Interactive Feature Plot Thumbnail" width="650" height="450">
+      </a>
+      <p class="chart-caption">Click the image to view the interactive visualization</p>
+    </section>
+
+    <!-- Section: Distribution of Selected Feature Within Genre -->
+    <section id="distribution" class="chart-section">
+      <h2>Distribution of Selected Feature Within Genre</h2>
+      <a href="feature_distribution.html">
+        <img class="chart-img" src="feature_distribution.png" alt="Distribution of Selected Feature Thumbnail" width="650" height="450">
+      </a>
+      <p class="chart-caption">Click the image to view the interactive visualization</p>
+    </section>
+
+    <!-- Section: First D3 Heatmap (Correlation Matrix) -->
+    <section id="d3heatmap1" class="chart-section">
+      <h2>Correlation Matrix Heatmap</h2>
+      <div id="heatmap1" class="d3-chart"></div>
+      <p class="chart-caption">Correlation matrix between features using a sequential color scale</p>
+    </section>
+
+    <!-- Section: Second D3 Heatmap (Genre Feature Means) -->
+    <section id="d3heatmap2" class="chart-section">
+      <h2>Mean Characteristics by Genre Heatmap</h2>
+      <div id="heatmap2" class="d3-chart small"></div>
+      <p class="chart-caption">Heatmap showing mean characteristics by genre</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>Created by DS4200 Group 17: Fiona Chen, Fin Li, Owen Hong</p>
+  </footer>
 
 </body>
 

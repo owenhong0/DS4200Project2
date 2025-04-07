@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Feature Plot by Genre</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Basic Reset & Body */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    /* Header with Back Button */
+    .header {
+      display: flex;
+      align-items: center;
+      background-color: #1DB954;
+      padding: 1em;
+      color: #fff;
+    }
+    .header button {
+      background-color: #fff;
+      border: none;
+      color: #1DB954;
+      font-weight: 600;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 1em;
+    }
+    .header button:hover {
+      background-color: #eaeaea;
+    }
+    .header h1 {
+      font-size: 1.25rem;
+      margin: 0;
+    }
+    /* Main Container */
+    .container {
+      display: flex;
+      flex: 1;
+      padding: 2em;
+      gap: 2em;
+    }
+    /* Left Column: Visualization */
+    .left-col {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .plot-object {
+      width: 100%;
+      height: 70vh;  /* Adjust as needed */
+      border: none;
+      background-color: #fff;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .chart-caption {
+      font-style: italic;
+      text-align: center;
+      margin-top: 0.5em;
+      color: #666;
+    }
+    /* Right Column: Analysis */
+    .right-col {
+      flex: 1;
+      max-width: 300px;
+      background-color: #fff;
+      padding: 1em;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      overflow-y: auto;
+    }
+    .right-col h2 {
+      margin-bottom: 0.5em;
+      color: #1DB954;
+    }
+    .right-col p {
+      line-height: 1.5;
+      margin-bottom: 1em;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Back Button -->
+  <div class="header">
+    <button onclick="window.location.href='index.html#abstract'">
+      Back to Home
+    </button>
+    <h1>Interactive Feature Plot by Genre</h1>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Left Column: Visualization -->
+    <div class="left-col">
+      <!-- Use the HTML5 object element instead of an iframe -->
+      <object class="plot-object" type="text/html" data="plots/interactive_feature_scatter.html">
+        Your browser does not support embedding this content.
+      </object>
+      <p class="chart-caption">
+        Scatterplot with dropdown controls for selecting features.
+      </p>
+    </div>
+
+    <!-- Right Column: Analysis -->
+    <div class="right-col">
+      <h2>Analysis</h2>
+      <p>
+        This interactive scatter plot allows users to explore relationships between various song features across genres.
+        Use the dropdown controls to select different features for the X and Y axes and observe how genres cluster based on these features.
+      </p>
+      <p>
+        The visualization highlights trends and correlations that may indicate which factors contribute to a song’s popularity.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
