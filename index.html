@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>What Factors Determine the Popularity of Songs on Spotify (2022)</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <!-- Link to external CSS file -->
   <link rel="stylesheet" href="style1.css">
@@ -14,32 +15,82 @@
       margin: 2em 0;
     }
     .chart-section h2 {
-      color: #1DB954;
+      color: #b91da1;
       text-align: center;
     }
+
     .chart-img {
       display: block;
       margin: 0 auto;
       border: none;
       cursor: pointer;
     }
+
     .chart-caption {
       text-align: center;
-      color: #ccc;
+      color: #ffffff;
       font-style: italic;
       margin-top: 0.5em;
     }
+
     /* Abstract Section Styling */
     .abstract {
-      background: #242424;
-      border: 1px solid #1DB954;
+      background: #ffffff;
+      border: 1px solid #a11db9;
       border-radius: 8px;
       padding: 20px;
       margin-bottom: 2em;
       color: #ccc;
     }
+
     .abstract p {
       margin: 0;
+    }
+
+    #heatmap2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    #heatmap2 svg {
+      display: block;
+      margin: 0 auto;
+    }
+
+    #heatmap1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    #heatmap1 svg {
+      display: block;
+      margin: 0 auto;
+    }
+    nav.top-nav{
+      background-color:antiquewhite;
+      color: #b91da1;
+    }
+
+    body {
+      background-color: white;
+      /* White background for the entire page */
+      color: #6a1b9a;
+      /* Purple text color for the whole page */
+      font-family: 'Roboto', sans-serif;
+      /* Apply the Roboto font */
+    }
+    footer {
+      background-color: gainsboro;
+      color: #6a1b9a;
+      font-family: 'Roboto', sans-serif;
     }
   </style>
 </head>
@@ -60,7 +111,11 @@
     <!-- Abstract Section -->
     <section id="abstract" class="abstract">
       <p>
-        Understanding what makes a song popular is useful information for artists, producers, and others in the music industry, with widely-used music streaming platforms being a reliable source of data on how listeners engage with songs. Using Spotify data from 2022, this project explores how song characteristics—such as duration, key, energy, and genre—correlate with a song's popularity on Spotify. By analyzing these factors, we aim to uncover trends that influence a song's popularity, offering insights into listener preferences and music consumption.
+        Understanding what makes a song popular is useful information for artists, producers, and others in the music
+        industry, with widely-used music streaming platforms being a reliable source of data on how listeners engage
+        with songs. Using Spotify data from 2022, this project explores how song characteristics—such as duration, key,
+        energy, and genre—correlate with a song's popularity on Spotify. By analyzing these factors, we aim to uncover
+        trends that influence a song's popularity, offering insights into listener preferences and music consumption.
       </p>
     </section>
 
@@ -69,7 +124,8 @@
       <h2>Popularity Score Distribution by Genre</h2>
       <!-- PNG thumbnail wrapped in an anchor; clicking it loads the interactive page -->
       <a href="popularity_distribution.html">
-        <img class="chart-img" src="popularity_distribution.png" alt="Popularity Score Distribution Thumbnail" width="750" height="450">
+        <img class="chart-img" src="popularity_distribution.png" alt="Popularity Score Distribution Thumbnail"
+          width="750" height="450">
       </a>
       <p class="chart-caption">Click the image to view the interactive visualization</p>
     </section>
@@ -78,7 +134,8 @@
     <section id="feature" class="chart-section">
       <h2>Interactive Feature Plot by Genre</h2>
       <a href="interactive_feature_scatter.html">
-        <img class="chart-img" src="interactive_feature_scatter.png" alt="Interactive Feature Plot Thumbnail" width="650" height="450">
+        <img class="chart-img" src="interactive_feature_scatter.png" alt="Interactive Feature Plot Thumbnail"
+          width="650" height="450">
       </a>
       <p class="chart-caption">Click the image to view the interactive visualization</p>
     </section>
@@ -87,7 +144,8 @@
     <section id="distribution" class="chart-section">
       <h2>Distribution of Selected Feature Within Genre</h2>
       <a href="feature_distribution.html">
-        <img class="chart-img" src="feature_distribution.png" alt="Distribution of Selected Feature Thumbnail" width="650" height="450">
+        <img class="chart-img" src="feature_distribution.png" alt="Distribution of Selected Feature Thumbnail"
+          width="650" height="450">
       </a>
       <p class="chart-caption">Click the image to view the interactive visualization</p>
     </section>
@@ -95,14 +153,20 @@
     <!-- Section: First D3 Heatmap (Correlation Matrix) -->
     <section id="d3heatmap1" class="chart-section">
       <h2>Correlation Matrix Heatmap</h2>
-      <div id="heatmap1" class="d3-chart"></div>
+      <a href="heatmap1.html">
+        <div id="heatmap1" class="d3-chart small"></div>
+      </a>
+      <script src="heatmap1.js"></script>
       <p class="chart-caption">Correlation matrix between features using a sequential color scale</p>
     </section>
 
     <!-- Section: Second D3 Heatmap (Genre Feature Means) -->
     <section id="d3heatmap2" class="chart-section">
       <h2>Mean Characteristics by Genre Heatmap</h2>
-      <div id="heatmap2" class="d3-chart small"></div>
+      <a href="heatmap2.html">
+        <div id="heatmap2" class="d3-chart small"></div>
+      </a>
+      <script src="heatmap2.js"></script>
       <p class="chart-caption">Heatmap showing mean characteristics by genre</p>
     </section>
   </div>
