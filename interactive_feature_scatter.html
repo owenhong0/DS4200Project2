@@ -149,31 +149,27 @@
         <div class="section">
           <h2>Exploratory Analysis:</h2>
           <p>
-            Reggaeton and latino lead in danceability
-            and valence, portraying them as rhythm-oriented and highly upbeat. Metal is the most energetic and loudest
-            genre, while scoring very low in acousticness and instrumentalness—consistent with its aggressive sound.
-            Indie
-            and indie-pop stand out for higher acousticness and slightly higher instrumentalness, aligning with their
-            mellow
-            and emotional styles. K-pop features high energy, valence, and danceability, showcasing a more vibrant
-            sound.
-            Popularity is uniformly high across genres, with slight peaks in latino, reggaeton, and rock.
+            This interactive scatter plot illustrates diverse relationships across pairs of features. For loudness and
+            energy, there is a strong positive relationship between loudness and energy across all genres. As loudness
+            increases (approaching 0 dBFS), energy levels tend to rise as well, forming a dense upward-sloping cluster.
+            The concentration of data points in the upper right quadrant confirms that many tracks are both loud and
+            energetic. Although genres overlap considerably, some patterns emerge: genres like metal, EDM, and rock tend
+            to occupy the louder and more energetic end of the spectrum, while more mellow genres like indie and
+            indie-pop are scattered toward the lower left. The wide dispersion at lower loudness levels shows that
+            quieter songs tend to vary more in energy, while louder tracks are consistently high in energy.
           </p>
 
           <h2>Explanatory Analysis:</h2>
           <p>
-            These genre trends suggest distinct emotional and rhythmic identities. Reggaeton and latino’s high valence
-            and
-            danceability reflect their potential role in party and social contexts, while indie’s low energy and valence
-            may
-            suggest introspection. The extreme energy of metal raises questions about its appeal—despite low valence,
-            its
-            intensity may attract listeners seeking catharsis and empowerment. Popularity is consistent across genres,
-            regardless of specific audio features, which implies that other variables—such as genre blending, artist
-            branding, or cross-cultural influence—may shape audience engagement. Generally, it appears that genres
-            cluster
-            based on shared features, possibly revealing underlying stylistic groupings not captured by genre labels
-            alone.
+            For loudness and energy, this visualization supports the idea that these features are deeply intertwined,
+            particularly in genres designed to be physically stimulating, like metal, EDM, and reggaeton. However, the
+            overlap of genres suggests that loudness and energy alone do not define genre boundaries. This raises the
+            question of whether genres are better differentiated by combining multiple features (e.g., valence,
+            danceability). The spread of quieter songs with a wide energy range—especially in indie and pop—also
+            suggests that some genres allow more dynamic diversity. Another potential hypothesis emerging here is that
+            songs with moderate loudness but high energy might leverage different production techniques (e.g., rhythmic
+            drive or instrumentation) to feel intense without being overly loud. This could be a useful insight for
+            producers aiming to balance impact with listening comfort.
           </p>
         </div>
       </div>
@@ -190,6 +186,11 @@
       <p>
         The visualization highlights trends and correlations that may indicate which factors contribute to a song’s
         popularity.
+      </p>
+      <p>
+        **Note: We chose loudness and energy as areas to analyze as trends in other features were very similar to those
+        in the next visualization.
+        More analysis on those features are offered there.
       </p>
     </div>
 </body>
