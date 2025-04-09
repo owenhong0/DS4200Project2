@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Popularity Score Distribution by Genre</title>
@@ -11,9 +12,12 @@
       padding: 0;
       box-sizing: border-box;
     }
-    html, body {
+
+    html,
+    body {
       height: 100%;
     }
+
     body {
       font-family: 'Roboto', sans-serif;
       background-color: #f5f5f5;
@@ -22,6 +26,7 @@
       flex-direction: column;
       min-height: 100vh;
     }
+
     /* Header with 'Back' Button */
     .header {
       display: flex;
@@ -30,6 +35,7 @@
       padding: 1em;
       color: #fff;
     }
+
     .header button {
       background-color: #fff;
       border: none;
@@ -40,13 +46,16 @@
       cursor: pointer;
       margin-right: 1em;
     }
+
     .header button:hover {
       background-color: #eaeaea;
     }
+
     .header h1 {
       font-size: 1.25rem;
       margin: 0;
     }
+
     /* Main Container */
     .container {
       display: flex;
@@ -54,6 +63,7 @@
       padding: 2em;
       gap: 2em;
     }
+
     /* Left Column: Visualization */
     .left-col {
       flex: 3;
@@ -61,19 +71,23 @@
       flex-direction: column;
       align-items: center;
     }
+
     .plot-object {
       width: 100%;
-      height: 70vh; /* Adjust height as needed */
+      height: 70vh;
+      /* Adjust height as needed */
       border: none;
       background-color: #fff;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
+
     .chart-caption {
       font-style: italic;
       text-align: center;
       margin-top: 0.5em;
       color: #666;
     }
+
     /* Right Column: Analysis */
     .right-col {
       flex: 1;
@@ -81,19 +95,36 @@
       background-color: #fff;
       padding: 1em;
       border-radius: 6px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
       overflow-y: auto;
     }
+
     .right-col h2 {
       margin-bottom: 0.5em;
       color: #1DB954;
     }
+
     .right-col p {
       line-height: 1.5;
       margin-bottom: 1em;
     }
+
+    p {
+      font-size: large;
+      padding: 1%;
+      line-height: 150%;
+    }
+
+    .section {
+      background-color: #fff;
+      padding: 1em;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      /* overflow-y: auto; */
+    }
   </style>
 </head>
+
 <body>
   <!-- Header with Back Button -->
   <div class="header">
@@ -112,6 +143,30 @@
       <p class="chart-caption">
         Interactive box plot with tooltip overlay displaying top 3 songs for each genre.
       </p>
+      <div class="container">
+        <div class="section">
+          <h2>Exploratory Analysis:</h2>
+          <p>
+            The popularity score distribution across genres reveals significant variations in how different music styles
+            perform on Spotify. Pop, reggaeton, and rock genres display higher median popularity scores, with pop
+            showing particularly tight clustering around higher values, suggesting consistent performance across tracks.
+            Dance and latino genres exhibit the widest spread between quartiles, indicating greater variability in
+            popularity within these categories. K-pop stands out with numerous outlier points at both lower and higher
+            ends, reflecting a polarized reception where some tracks achieve exceptional popularity while others
+            underperform.
+          </p>
+
+          <h2>Explanatory Analysis:</h2>
+          <p>
+            The clustering of multiple high-value outliers in the latin, reggaeton, and pop genres suggests these styles
+            benefit from strong engagement from specific listener demographics. This pattern may stem from Spotify's
+            algorithmic recommendations and playlist curation that favor certain regional preferences, similar to how we
+            observed that genre categorization impacts popularity metrics in our previous analysis. The relatively lower
+            median scores for alt-rock and electro could indicate either more niche audience appeal or greater
+            competition within these saturated categories.
+          </p>
+        </div>
+      </div>
     </div>
 
     <!-- Right Column: Analysis -->
@@ -122,9 +177,11 @@
         Hover over each box to see the top 3 songs in that genre.
       </p>
       <p>
-        The visualization helps to identify trends in song popularity and offers insights into which genres tend to perform better on Spotify.
+        The visualization helps to identify trends in song popularity and offers insights into which genres tend to
+        perform better on Spotify.
       </p>
     </div>
   </div>
 </body>
+
 </html>

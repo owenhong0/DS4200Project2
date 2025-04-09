@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Feature Distribution</title>
@@ -11,9 +12,12 @@
       padding: 0;
       box-sizing: border-box;
     }
-    html, body {
+
+    html,
+    body {
       height: 100%;
     }
+
     body {
       font-family: 'Roboto', sans-serif;
       background-color: #f5f5f5;
@@ -22,6 +26,7 @@
       flex-direction: column;
       min-height: 100vh;
     }
+
     /* Header with 'Back' Button */
     .header {
       display: flex;
@@ -30,6 +35,7 @@
       padding: 1em;
       color: #fff;
     }
+
     .header button {
       background-color: #fff;
       border: none;
@@ -40,13 +46,16 @@
       cursor: pointer;
       margin-right: 1em;
     }
+
     .header button:hover {
       background-color: #eaeaea;
     }
+
     .header h1 {
       font-size: 1.25rem;
       margin: 0;
     }
+
     /* Main Container */
     .container {
       display: flex;
@@ -54,6 +63,7 @@
       padding: 2em;
       gap: 2em;
     }
+
     /* Left Column: Visualization */
     .left-col {
       flex: 3;
@@ -61,19 +71,23 @@
       flex-direction: column;
       align-items: center;
     }
+
     .plot-object {
       width: 100%;
-      height: 70vh; /* Adjust as needed */
+      height: 70vh;
+      /* Adjust as needed */
       border: none;
       background-color: #fff;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
+
     .chart-caption {
       font-style: italic;
       text-align: center;
       margin-top: 0.5em;
       color: #666;
     }
+
     /* Right Column: Analysis */
     .right-col {
       flex: 1;
@@ -81,19 +95,36 @@
       background-color: #fff;
       padding: 1em;
       border-radius: 6px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
       overflow-y: auto;
     }
+
     .right-col h2 {
       margin-bottom: 0.5em;
       color: #1DB954;
     }
+
     .right-col p {
       line-height: 1.5;
       margin-bottom: 1em;
     }
+
+    p {
+      font-size: large;
+      padding: 1%;
+      line-height: 150%;
+    }
+
+    .section {
+      background-color: #fff;
+      padding: 1em;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      /* overflow-y: auto; */
+    }
   </style>
 </head>
+
 <body>
   <!-- Header with Back Button -->
   <div class="header">
@@ -111,6 +142,40 @@
       <p class="chart-caption">
         Interactive chart displaying the distribution of a selected feature across genres.
       </p>
+      <div class="container">
+        <div class="section">
+          <h2>Exploratory Analysis:</h2>
+          <p>
+            The analysis of the dataset reveals insightful trends across various music genres based on key attributes.
+            Popularity distributions show that most songs are centered around the 70s, with genres like Latino and
+            Reggaeton having three tracks each in the highest popularity range, while Pop and Dance stand out with one
+            song rated 100 for popularity. Regarding song duration, most tracks fall within the 2 minutes 40 seconds to
+            4 minutes range, with Alternative, Alt-Rock, Metal, and Rock having longer songs, some reaching up to 9
+            minutes, while Indie and Indie Pop feature shorter songs, often under a minute. When examining danceability,
+            the data reveals a generally normal distribution, with genres like Alternative and Alt-Rock showing lower
+            danceability scores, while Reggaeton and Latino music showcase the most danceable tracks, peaking around
+            scores of 70-80. For energy, genres like Rock, Metal, Indie, and Alternative show right-skewed distributions
+            with most songs exceeding 70 in energy, while Indie music includes 15 tracks with a perfect score of 100.
+            Lastly, tempo trends indicate that Latino and Reggaeton music commonly have a tempo around 95 BPM, while
+            EDM, House, and Electro music are centered around 120-130 BPM, highlighting distinct rhythmic patterns
+            across genres.
+          </p>
+
+          <h2>Explanatory Analysis:</h2>
+          <p>
+            These genre suggest that the geographic and cultural distributions of Spotify users may impact their
+            popularity ratings . Latino and reggaeton genres having multiple high rated scores for songs may be directly
+            impacted by the number of people who listen to that genre. This means both there are large amounts of
+            Spanish speaking users who listen to that genre but also that Spotify grouping all of those songs together
+            may force a lack of distribution and specificity within those genres. Trends in durations seem to be
+            reasonable as most songs fall near the 3 minute mark that usually dominates the average lengths of songs
+            that users are used to listening to. The longer and shorter songs can represent the intro tracks to albums
+            or unique tracks in albums that users may usually not listen to but are included in popular albums. For
+            danceability, energy, and tempo, the data reflects reasonable suggestions that edm and house music has more
+            energy but less danceable while latino and reggaeton offers more groovy songs that may be slower.
+          </p>
+        </div>
+      </div>
     </div>
 
     <!-- Right Column: Analysis -->
@@ -120,9 +185,10 @@
         This interactive chart illustrates how a specific feature varies across different genres.
       </p>
       <p>
-        Experiment with the available options in the visualization to see how the distribution shifts, which can help in understanding the influence of that feature on song popularity.
+        Experiment with the available options in the visualization to see how the distribution shifts, which can help in
+        understanding the influence of that feature on song popularity.
       </p>
     </div>
-  </div>
 </body>
+
 </html>

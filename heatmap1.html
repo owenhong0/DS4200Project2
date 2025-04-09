@@ -108,6 +108,24 @@
             line-height: 1.5;
             margin-bottom: 1em;
         }
+
+        svg {
+            background-color: #fff;
+        }
+
+        p {
+            font-size: large;
+            padding: 1%;
+            line-height: 150%;
+        }
+
+        .section {
+            background-color: #fff;
+            padding: 1em;
+            border-radius: 6px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            /* overflow-y: auto; */
+        }
     </style>
 </head>
 
@@ -127,22 +145,51 @@
             <script src='heatmap1.js'></script>
 
             <p class="chart-caption">
-                Scatterplot with dropdown controls for selecting features.
+                Feature Correlation Matrix
             </p>
-        </div>
 
+            <div class="container">
+                <div class="section">
+                    <h2>Exploratory Analysis:</h2>
+                    <p>
+                        The feature correlation matrix reveals several strong relationships between musical attributes.
+                        Energy and loudness have the highest positive correlation (0.76), indicating that energetic
+                        tracks are generally louder. Energy also correlates positively with valence (0.48), suggesting
+                        that high-energy music tends to make one feel more positive or happy. Conversely, acousticness
+                        is strongly negatively correlated with energy (-0.73) and loudness (-0.59), meaning acoustic
+                        songs are typically softer and less intense. Instrumentalness also shows a moderate negative
+                        correlation with loudness (-0.43) and energy (-0.18), reflecting a calmer sound profile.
+                        Popularity, interestingly, has weak or negligible correlations with all other features,
+                        suggesting that its drivers are largely external beyond feature audio characteristics.
+                    </p>
+
+                    <h2>Explanatory Analysis:</h2>
+                    <p>
+                        The weak relationship between popularity and any single musical feature implies that success may
+                        be shaped more by external factors, such as artist reputation, marketing, or social media,
+                        rather than by the sound itself. The clustering of energy, loudness, and valence hints at a
+                        synergy between physical intensity and emotional brightness, which might inform how music is
+                        curated for certain experiences (e.g., workouts or parties). The inverse link between
+                        acousticness and energy suggests tradeoffs between organic feel vs. amplified power, pointing
+                        towards distinct production styles. These patterns raise interesting questions about whether
+                        certain feature combinations consistently define commercial genres on streaming platforms or
+                        influence listener preferences and mood.
+                    </p>
+                </div>
+            </div>
+        </div>
         <!-- Right Column: Analysis -->
         <div class="right-col">
-            <h2>Analysis</h2>
+            <h2>Description</h2>
             <p>
-                This interactive chart illustrates how a specific feature varies across different genres.
-            </p>
-            <p>
-                Experiment with the available options in the visualization to see how the distribution shifts, which can
-                help in understanding the influence of that feature on song popularity.
+                Heatmap displaying Pearson correlation coefficients between Spotify audio features. The color intensity
+                indicates strength of correlation
+                revealing relationships. This visualization helps identify which audio characteristics tend to occur
+                together or oppose each other across songs in the dataset.
             </p>
         </div>
     </div>
+
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Interactive Feature Plot by Genre</title>
@@ -11,9 +12,12 @@
       padding: 0;
       box-sizing: border-box;
     }
-    html, body {
+
+    html,
+    body {
       height: 100%;
     }
+
     body {
       font-family: 'Roboto', sans-serif;
       background-color: #f5f5f5;
@@ -22,6 +26,7 @@
       flex-direction: column;
       min-height: 100vh;
     }
+
     /* Header with Back Button */
     .header {
       display: flex;
@@ -30,6 +35,7 @@
       padding: 1em;
       color: #fff;
     }
+
     .header button {
       background-color: #fff;
       border: none;
@@ -40,13 +46,16 @@
       cursor: pointer;
       margin-right: 1em;
     }
+
     .header button:hover {
       background-color: #eaeaea;
     }
+
     .header h1 {
       font-size: 1.25rem;
       margin: 0;
     }
+
     /* Main Container */
     .container {
       display: flex;
@@ -54,6 +63,7 @@
       padding: 2em;
       gap: 2em;
     }
+
     /* Left Column: Visualization */
     .left-col {
       flex: 3;
@@ -61,19 +71,23 @@
       flex-direction: column;
       align-items: center;
     }
+
     .plot-object {
       width: 100%;
-      height: 70vh;  /* Adjust as needed */
+      height: 70vh;
+      /* Adjust as needed */
       border: none;
       background-color: #fff;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
+
     .chart-caption {
       font-style: italic;
       text-align: center;
       margin-top: 0.5em;
       color: #666;
     }
+
     /* Right Column: Analysis */
     .right-col {
       flex: 1;
@@ -81,19 +95,36 @@
       background-color: #fff;
       padding: 1em;
       border-radius: 6px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
       overflow-y: auto;
     }
+
     .right-col h2 {
       margin-bottom: 0.5em;
       color: #1DB954;
     }
+
     .right-col p {
       line-height: 1.5;
       margin-bottom: 1em;
     }
+
+    p {
+      font-size: large;
+      padding: 1%;
+      line-height: 150%;
+    }
+
+    .section {
+      background-color: #fff;
+      padding: 1em;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      /* overflow-y: auto; */
+    }
   </style>
 </head>
+
 <body>
   <!-- Header with Back Button -->
   <div class="header">
@@ -114,19 +145,53 @@
       <p class="chart-caption">
         Scatterplot with dropdown controls for selecting features.
       </p>
-    </div>
+      <div class="container">
+        <div class="section">
+          <h2>Exploratory Analysis:</h2>
+          <p>
+            Reggaeton and latino lead in danceability
+            and valence, portraying them as rhythm-oriented and highly upbeat. Metal is the most energetic and loudest
+            genre, while scoring very low in acousticness and instrumentalness—consistent with its aggressive sound.
+            Indie
+            and indie-pop stand out for higher acousticness and slightly higher instrumentalness, aligning with their
+            mellow
+            and emotional styles. K-pop features high energy, valence, and danceability, showcasing a more vibrant
+            sound.
+            Popularity is uniformly high across genres, with slight peaks in latino, reggaeton, and rock.
+          </p>
 
+          <h2>Explanatory Analysis:</h2>
+          <p>
+            These genre trends suggest distinct emotional and rhythmic identities. Reggaeton and latino’s high valence
+            and
+            danceability reflect their potential role in party and social contexts, while indie’s low energy and valence
+            may
+            suggest introspection. The extreme energy of metal raises questions about its appeal—despite low valence,
+            its
+            intensity may attract listeners seeking catharsis and empowerment. Popularity is consistent across genres,
+            regardless of specific audio features, which implies that other variables—such as genre blending, artist
+            branding, or cross-cultural influence—may shape audience engagement. Generally, it appears that genres
+            cluster
+            based on shared features, possibly revealing underlying stylistic groupings not captured by genre labels
+            alone.
+          </p>
+        </div>
+      </div>
+    </div>
     <!-- Right Column: Analysis -->
     <div class="right-col">
       <h2>Analysis</h2>
       <p>
-        This interactive scatter plot allows users to explore relationships between various song features across genres.
-        Use the dropdown controls to select different features for the X and Y axes and observe how genres cluster based on these features.
+        This interactive scatter plot allows users to explore relationships between various song features across
+        genres.
+        Use the dropdown controls to select different features for the X and Y axes and observe how genres cluster
+        based on these features.
       </p>
       <p>
-        The visualization highlights trends and correlations that may indicate which factors contribute to a song’s popularity.
+        The visualization highlights trends and correlations that may indicate which factors contribute to a song’s
+        popularity.
       </p>
     </div>
-  </div>
 </body>
+
 </html>
