@@ -27,6 +27,7 @@
   <div class="container">
     <!-- Abstract Section -->
     <section id="abstract" class="abstract">
+      <h1> Motivation </h1>
       <p>
         Understanding what drives a song’s popularity is useful information for artists, producers, and others in the
         music industry, with widely-used music streaming platforms being a reliable source of data on how listeners
@@ -36,6 +37,31 @@
         in popular genres and songs, offering insights into listener preferences and music consumption on streaming
         platforms.
       </p>
+    </section>
+
+    <section id="data" class="data">
+      <h1> Data </h1>
+      <p>
+        The data originates from <a href="https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset/"> Kaggle</a> and is a snapshot in time of the most popular songs on Spotify from October
+        22nd, 2022. Representing over 125 different genres of music in CSV format, the dataset has 21 columns describing
+        each track’s ID, popularity, duration, danceability, and other documented features. There are around 90,000
+        unique track IDs in this dataset that corresponds to around 110,000 rows with around 30,000 unique artists to
+        analyze. The file itself is 20 MB in size.
+
+        The numerical attributes used in analysis are:
+      </p>
+        <li> A track’s popularity (0-100, where 100 is most popular). Mainly determined by the track’s total</li>
+        <li> number of plays and how recent the plays are.</li>
+        <li> Duration: The track duration in milliseconds.</li>
+        <li> Danceability: How suitable a track is for dancing (0-1, where 1 is most danceable).</li>
+        <li> Energy: How active and intense the track is (0-1, where 1 is highest energy).</li>
+        <li> Loudness: The overall loudness of a track in decibels.</li>
+        <li> Speechiness: How much a track uses spoken words (0-1, where 1 is entirely spoken words).</li>
+        <li> Acousticness: How acoustic a track is (0-1, where 1 is entirely acoustic).</li>
+        <li> Instrumentalness: How many vocals a track uses (0-1, where 1 is no vocal content).</li>
+        <li> Liveness: How likely it was that a track was performed live (0-1, where 1 is performed live).</li>
+        <li> Valence: How positive (happy, cheerful, etc.) the track sounds (0-1, where 1 is most positive).</li>
+        <li> Tempo: The overall tempo of a track in beats per minute.</li>
     </section>
 
     <!-- Section: Popularity Score Distribution by Genre -->
@@ -88,6 +114,26 @@
       <script src="heatmap2.js"></script>
       <p class="chart-caption">Heatmap showing mean characteristics by genre</p>
     </section>
+
+    <!-- Summary Section -->
+    <section id="summary" class="abstract">
+      <h1> Summary </h1>
+      <p>
+        This project investigates how musical characteristics relate to genre and song popularity using Spotify data
+        from 2022. Analysis reveals that some genres are characterized by distinct feature profiles—for example, metal
+        having low danceability and high energy—and that some features are positively correlated, indicating shared
+        characteristics among songs. Genre may influence popularity, as popularity is not evenly distributed across
+        genres. However, musical features did not directly correlate with popularity, suggesting that other external
+        factors may influence popularity, such as the artist's popularity and marketing.
+
+        Future work could include additional variables to explore what external factors may influence popularity. In
+        addition, because we used data that was a snapshot in time, there was no temporal component; therefore, time
+        series data could be included to study how listener preferences have changed over time. Lastly, comparing
+        results with those from other streaming platforms (Apple Music, YouTube, etc.) could test whether the observed
+        patterns are Spotify-specific or more universal across music consumption.
+      </p>
+    </section>
+
   </div>
 
   <footer>

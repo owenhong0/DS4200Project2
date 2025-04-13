@@ -140,6 +140,15 @@ h2 {
   margin-top: 0.5em;
 }
 
+.data {
+  background: #9B4D96;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 2em;
+  color: #FFFFFF;
+}
+
 /* Footer */
 footer {
   background: #121212;
